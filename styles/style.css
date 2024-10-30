@@ -84,15 +84,13 @@ ol {
 
 .search-form__fieldset-title {
   font-weight: normal;
-  font-size: 18px;
+  font-size: inherit;
 }
 
 .search-form__label {
   display: flex;
   align-items: center;
   gap: 5px;
-  border: solid 1px transparent;
-  padding: 0 1px;
 }
 
 .search-form__label:hover .search-form__label-text {
@@ -106,12 +104,16 @@ ol {
   border-right: solid 1px transparent;
   border-bottom: solid 1px #fff;
   border-left: solid 1px transparent;
-  padding: 2.5px 0;
-  opacity: 0.7;
-  color: white;
   font-family: inherit;
   font-size: inherit;
+  color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
+}
+
+.search-form__textfield::placeholder {
+  color: white;
+  opacity: 0.7;
+  font-size: 18px;
 }
 
 .search-form__textfield:hover {
@@ -122,7 +124,7 @@ ol {
   border: solid 1px white;
 }
 
-.search-form__label:focus-within {
+.search-form__label:has(:focus-visible){
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -161,7 +163,6 @@ ol {
   border: solid 1px currentColor;
   color: #fff;
   font-family: inherit;
-  font-weight: bold;
   font-weight: bold;
   font-size: inherit;
   background-color: transparent;
@@ -212,7 +213,7 @@ ol {
   flex-direction: column;
   width: 400px;
   height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .content__list-item {
@@ -223,7 +224,7 @@ ol {
   margin-bottom: 30px;
 }
 
-.content__list-item:focus-within {
+.content__list-item:has(:focus-visible) {
   border: solid 1px white;
 }
 
@@ -233,27 +234,27 @@ ol {
   text-decoration: none;
 }
 
+.content__card-link:has(:active) {
+  background-color: #545050;
+}
+
+.content__card-link:has(:hover) {
+  text-decoration: underline;
+}
+
 .content__video-card {
   display: flex;
   justify-items: start;
   gap: 0;
-}
-
-.content__video-card:active {
-  background-color: #545050;
-}
-
-.content__video-card:hover {
-  text-decoration: underline;
+  min-height: 107px;
 }
 
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: 100%;
   height: 100%;
-  max-width: 200px;
+  width: 200px;
 }
 
 .content__video-card-title {
@@ -261,24 +262,24 @@ ol {
   font-weight: bold;
   font-size: 30px;
   line-height: 30px;
-  width: 100%;
+  width: inherit;
   text-transform: uppercase;
   text-overflow: ellipsis; 
-  white-space: nowrap; 
   overflow: hidden;
+  white-space: nowrap; 
 }
 
 .content__video-card-description {
   overflow: hidden;
   overflow-wrap: break-word;
-  max-width: 200px;
   line-height: 17px;
 }
 
 .content__video-card-thumbnail {
-  width: 100%;
+  width: 194px;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__card-link_current {
