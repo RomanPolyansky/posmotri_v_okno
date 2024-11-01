@@ -220,10 +220,8 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 400px;
   height: 300px;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .content__list-item {
@@ -242,6 +240,10 @@ ol {
   display: block;
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link:focus {
+  outline: none;
 }
 
 .content__card-link:has(:active) {
