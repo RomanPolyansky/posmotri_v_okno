@@ -40,9 +40,8 @@ ol {
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto 400px;
   align-items: end;
   gap: 30px;
   width: 100%;
@@ -220,8 +219,10 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 400px;
   height: 300px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .content__list-item {
@@ -242,10 +243,6 @@ ol {
   text-decoration: none;
 }
 
-.content__card-link:focus {
-  outline: none;
-}
-
 .content__card-link:has(:active) {
   background-color: #545050;
 }
@@ -261,10 +258,11 @@ ol {
 }
 
 .content__video-card-description-container {
+  padding-top: 2px;
+  padding-left: 2px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  height: 100%;
   width: 200px;
 }
 
@@ -287,10 +285,11 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 100%;
+  box-sizing: content-box;
+  height: 103px;
   object-fit: cover;
   object-position: center;
+  padding: 2px;
 }
 
 .content__card-link_current {
